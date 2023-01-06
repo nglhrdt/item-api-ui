@@ -6,6 +6,9 @@
 /out-tsc
 /bazel-out
 
+# generated sources
+build
+
 # Node
 /node_modules
 npm-debug.log

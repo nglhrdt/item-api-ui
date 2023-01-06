@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "6.2.1",
+    "generators": {
+      "v2.0": {
+        "generatorName": "typescript-angular",
+        "output": "./build/openapi",
+        "inputSpec": "https://raw.githubusercontent.com/nglhrdt/item-api/main/src/main/resources/item-api.yml",
+        "additionalProperties": {
+          "npmName": "restClient",
+          "supportsES6": "true",
+          "withInterfaces": true
+        }
+      }
+    }
+  }
+}
