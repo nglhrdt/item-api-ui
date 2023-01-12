@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { DefaultService, Item } from 'build/openapi';
 import { first } from 'rxjs';
@@ -12,15 +13,18 @@ import { SharedModule } from 'src/app/shared/shared.module';
   styleUrls: ['./create-item.component.scss'],
 })
 export class CreateItemComponent {
-  name = '';
+  createItemFormGroup = this.formBuilder.group(
+    {name: ''}
+  )
 
   constructor(
-    private readonly service: DefaultService,
+    private formBuilder: FormBuilder,
+    private service: DefaultService,
     private router: Router,
   ) {}
 
   onSubmit() {
-    const name = this.name;
+    const name = this.createItemFormGroup.value.name;
     if (name) {
       this.service
         .createItem({ name })

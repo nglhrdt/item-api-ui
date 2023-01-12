@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ItemsListComponent } from "./items-list/items-list.component";
+
+interface NavItem {
+  text: string;
+  url: string;
+}
 
 @Component({
-    selector: 'app-items',
-    standalone: true,
-    templateUrl: './items.component.html',
-    styleUrls: ['./items.component.scss'],
-    imports: [SharedModule, RouterOutlet, RouterLink, ItemsListComponent]
+  selector: 'app-items',
+  standalone: true,
+  imports: [SharedModule, RouterOutlet, RouterLink],
+  templateUrl: './items.component.html',
 })
 export class ItemsComponent {
+  @HostBinding('class') cssClasses = 'flex flex-col h-full';
 
+  navItems: NavItem[] = [
+    { text: 'Items', url: '/items' },
+    { text: 'New', url: '/items/create' },
+  ];
 }

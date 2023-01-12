@@ -9,7 +9,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
   standalone: true,
   imports: [SharedModule, RouterLink],
   templateUrl: './items-list.component.html',
-  styleUrls: ['./items-list.component.scss'],
 })
 export class ItemsListComponent {
   items$: Observable<Item[]>;

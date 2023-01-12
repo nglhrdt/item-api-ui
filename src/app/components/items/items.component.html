@@ -1,4 +1,6 @@
-<button routerLink="/items/create">Create</button>
-<app-items-list></app-items-list>
-
-<router-outlet></router-outlet>
+<div class="flex divide-x border-b justify-center">
+  <div *ngFor="let item of navItems" [routerLink]="item.url" class="flex justify-center items-center px-4 py-2 cursor-pointer">{{item.text}}</div>
+</div>
+<div class="grow p-4 overflow-hidden">
+  <router-outlet></router-outlet>
+</div>

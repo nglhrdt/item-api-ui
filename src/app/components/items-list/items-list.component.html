@@ -1,0 +1,5 @@
+<app-card class="flex flex-col h-full overflow-y-auto overflow-x-hidden divide-y divide-slate-200 dark:divide-slate-700 shadow-md">
+  <div *ngFor="let item of items$ | async" routerLink="/items/{{item.id}}" class="p-2 cursor-pointer">
+    <div [title]="item.name" class="overflow-hidden text-ellipsis whitespace-nowrap">{{item.name}}</div>
+  </div>
+</app-card>

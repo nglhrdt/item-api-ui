@@ -1,0 +1,8 @@
+<app-card class="flex flex-col gap-4">
+  <form (ngSubmit)="onSubmit()" [formGroup]="createItemFormGroup" class="grid grid-cols-1 gap-4">
+    <label>Name</label>
+    <input type="text" formControlName="name" appAutofocus class="text-slate-800 border border-slate-900 px-2 py-1" />
+    <input type="submit" class="hidden" />
+  </form>
+  <app-button (click)="onSubmit()">Save</app-button>
+</app-card>

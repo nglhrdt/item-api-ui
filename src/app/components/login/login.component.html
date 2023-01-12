@@ -1,0 +1,15 @@
+<app-card class="grow flex flex-col gap-4">
+  <div class="text-xl font-semibold">Login</div>
+  <form (ngSubmit)="login()" [formGroup]="loginFormGroup" class="flex flex-col gap-4">
+    <div class="flex flex-col gap-1">
+      <label>Email</label>
+      <input type="email" formControlName="email" appAutofocus class="text-slate-800 px-2 py-1"/>
+    </div>
+    <div class="flex flex-col gap-1">
+      <label>Password</label>
+      <input type="password" formControlName="password" class="text-slate-800 px-2 py-1"/>
+    </div>
+    <input type="submit" class="hidden">
+  </form>
+  <app-button [disabled]="loginFormGroup.invalid">Login</app-button>
+</app-card>
